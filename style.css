@@ -1,0 +1,108 @@
+/*
+Theme Name: Bee themes
+Author: Valeria Osorio
+Description: Bee themes brings your site to life with immersive featured images and subtle animations fully responsive.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: beethemes
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo
+*/
+
+/* CUSTOM STYLES */
+*{
+  margin: 0px;
+}
+
+body{
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'roboto';
+}
+
+/* CALENDAR WIDGET */
+.widget_calendar {float: left;}
+#wp-calendar {width: 100%; }
+#wp-calendar caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
+#wp-calendar thead { font-size: 10px; }
+#wp-calendar thead th { padding-bottom: 10px; }
+#wp-calendar tbody { color: #aaa; }
+#wp-calendar tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
+#wp-calendar tbody td:hover { background: #fff; }
+#wp-calendar tbody .pad { background: none; }
+#wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+#wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+
+/* LINKS */
+a{
+  color: #D7AB0F !important;
+}
+a:hover{
+  color:  blue!important;
+}
+
+/* TXT AND HEADINGS */
+hr{
+  color: #D7AB0F;
+}
+
+h1{
+  color: white;
+}
+
+/* MENU */
+.bg-custom{
+  background-color: black;
+}
+.navbar-custom{
+  background-color: black;
+}
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ARROW */
+.img-arrow{
+  width: 99.47px;
+  height: 61.29px;
+}
+
+/* LANDING PAGE */
+.display-1-custom{
+  position: absolute;
+  top: 150px;
+}
+.section-top{
+  height: 878px;
+  width: auto;
+}
+
+/* FOOTER */
+.btn-donate{
+  position: relative;
+  height: 200px;
+  width: auto;
+}
+
+/* FLEXSLIDER */
+.flex-caption {
+  width: 96%;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+li.css a {
+  border-radius: 0;
+}
+
+/* IMAGES */
+/* FRONT-PAGE.PHP */
+
+
+
