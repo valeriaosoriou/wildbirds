@@ -4,7 +4,7 @@
 function wildbirds_customize_register($wp_customize){
   //All our sections, settings, and controls will be added here
   
-  // Background Colour
+  //-------------------------------- BACKGROUND COLOR -----------------------------------------------//
   $wp_customize->add_setting( 'wildbirds_backgroundColor' , array(
     'default'   => '#ffffff',
     'transport' => 'refresh',
@@ -37,6 +37,26 @@ $wp_customize->add_setting('homepage_banner_image', array(
 // )));
 
 }//end function
+
+//-------------------------------- FOOTER MESSAGE -----------------------------------------------//
+// Add a footer/copyright information section.
+// $wp_customize->add_section( 'wildbirds_footerSection' , array(
+//   'title' => __( 'Footer', 'wildbirds' ),
+//   'priority' => 105, // Before Widgets.
+// ) );
+
+// $wp_customize->add_setting( 'garden_footerMessage' , array(
+//   'default'   => 'copyright@2020',
+//   'transport' => 'refresh',
+// ) );
+
+// $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'garden_footerMessageControl', array(
+// 'label'      => __( 'Footer Text', 'gardenTheme' ),
+// 'section'    => 'garden_footerSection',
+// 'settings'   => 'garden_footerMessage',
+// ) ) );
+
+
 
 add_action('customize_register', 'wildbirds_customize_register');
 

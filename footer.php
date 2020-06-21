@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-12 col-md-4">
             <small>
-              Art Theme by <a href=""> Vale Osorio</a>, Copyright@2020
+              Art Theme by <a href="http://www.valosorio.com"> Vale Osorio</a>, Copyright@2020
             </small>
           </div>
           <div class="col-12 col-md-4">
@@ -18,7 +18,7 @@
             <i class="fab fa-pinterest"></i>
           </div>
           <div class="col-12 col-md-4">
-            <small>Wild Birds Art Workshop</small>
+            <small>Wild birds Art WOrkshop</small>
           </div>
         </div> 
       </div><!-- end container -->

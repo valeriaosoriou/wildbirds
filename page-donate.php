@@ -1,34 +1,14 @@
 <?php get_header(); ?>
-<style>
-  .testing{
-    
-    background:url(<?php echo get_theme_mod('homepage_banner_image', get_bloginfo('template_url').'/images/glennstory.jpg'); ?>) no-repeat center;
-    
-    width: 100%;
-    height: 30rem;
-    /* z-index: 1000; */ 
-  }
-  .abc{
-    padding-top: 0.5rem;
-  }
-  .background-images-styles{
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-
-  }
-</style>
 
 <!-- CONTENT -->
 <!-- SECTION 1: TOP BANNER -->
 <section class="container-fluid bg-custom section-top">
-    <div class="container pt-3"> 
+    <div class="container pt-5"> 
       <div class="row">
       <?php if ( have_posts() ): while (have_posts()): the_post(); ?>
         <div class="col-12 col-md-6">
-          <h1 class="display-1 text-left font-weight-bold display-1-custom">
-            Changing <br> lives <br> through <br> art
+          <h1 class="text-left text-uppercase display-1-custom">
+          Every donation is important to us.
           </h1>
         </div>
         <div class="col-12 col-md-6 img">
@@ -45,15 +25,45 @@
     <div class="container">
       <div class="row">
         <div class="col img">
-          <!-- <a>
+          <a>
             <img class="float-right img-fluid img-arrow" src="images/down.png" alt="arrow">
-          </a> -->
+          </a>
           </div>
         <?php endwhile; endif; ?>
       </div>
     </div>
-
   </section>
 
+<!-- SECTION 2 -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <p><small> Prefer to donate by Bank Deposit?.</small><a href="#"> Clic here.</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>I wish to donate: </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="rounded-0">20 NZD</button>
+      </div>
+      <div class="col">
+        <button>40 NZD</button>
+      </div>
+      <div class="col">
+        <button>50 NZD</button>
+      </div>
+      <div class="col">
+        <button>20 NZD</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+    </div>
+</div>
 
+<!-- FOOTER -->
 <?php get_footer(); ?>

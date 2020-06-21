@@ -1,8 +1,8 @@
 <?php
 //-------------------- HEADER: STYLESHEETS, BOOTSTRAP AND JS-------------------//
 function add_css_js() {
-  //wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300;400&display=swap'); //google-fonts CDN
-  //wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(),'5.13.0', false);//font awesome CDN
+  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300;400&display=swap'); //google-fonts CDN
+  wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(),'5.13.0', false);//font awesome CDN
   wp_enqueue_style( 'style', get_stylesheet_uri()); //style.css
   wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'false', 'all'); //boostrap CSS
   
@@ -24,6 +24,7 @@ add_action( 'wp_enqueue_scripts', 'add_css_js' );
 //   );
 // }
 // add_action( 'init', 'wildbirs_register_nav_menus' );
+
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 function theme_setup(){
   // Menus
@@ -47,15 +48,15 @@ function theme_setup(){
       }
       add_filter( 'nav_menu_link_attributes', 'a_class_nav', 10, 3 );
 //-----------------------------------HEADER -------------------------------//
-$args = array(
-  'flex-width'    => true,
-  'header-text'   => true,
-  'width'         => 1920,
-  'flex-height'   => true,
-  'height'        => 800,
-  'default-image' => get_template_directory_uri() . '/images/header.jpg',
-);
-add_theme_support( 'custom-header', $args );
+// $args = array(
+//   'flex-width'    => true,
+//   'header-text'   => true,
+//   'width'         => 1920,
+//   'flex-height'   => true,
+//   'height'        => 800,
+//   'default-image' => get_template_directory_uri() . '/images/header.jpg',
+// );
+// add_theme_support( 'custom-header', $args );
 
 //----------------------------- LOGO ------------------------------------//
 function wildbirs_custom_logo_setup() { //Adding custom logo with 5 arguments
@@ -124,5 +125,67 @@ function my_theme_wrapper_end() {
 //---------------------------------Theme customization API-----------------------------//
 require_once get_template_directory() . '/customizer.php';
 
-//---------------------------------#######-----------------------------//
+//---------------------------------TAXONOMY- NON HIERARCHICAL -----------------------------//
+//hook into the init action and call create_topics_nonhierarchical_taxonomy when it fires
+ 
+add_action( 'init', 'create_topics_nonhierarchical_taxonomy', 0 );
+ 
+function create_topics_nonhierarchical_taxonomy() {
+ 
+// Labels part for the GUI
+ 
+  $labels = array(
+    'name' => _x( 'Topics', 'taxonomy general name' ),
+    'singular_name' => _x( 'Topic', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Topics' ),
+    'popular_items' => __( 'Popular Topics' ),
+    'all_items' => __( 'All Topics' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Topic' ), 
+    'update_item' => __( 'Update Topic' ),
+    'add_new_item' => __( 'Add New Topic' ),
+    'new_item_name' => __( 'New Topic Name' ),
+    'separate_items_with_commas' => __( 'Separate topics with commas' ),
+    'add_or_remove_items' => __( 'Add or remove topics' ),
+    'choose_from_most_used' => __( 'Choose from the most used topics' ),
+    'menu_name' => __( 'Topics' ),
+  ); 
+ 
+// Now register the non-hierarchical taxonomy like tag
+ 
+  register_taxonomy('topics','post',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'topic' ),
+  ));
+}
+
+//---------------------------------CUSTOM POST -----------------------------//
+// Our custom post type function
+function create_posttype() {
+ 
+  register_post_type( 'movies',
+  // CPT Options
+      array(
+          'labels' => array(
+              'name' => __( 'Movies' ),
+              'singular_name' => __( 'Movie' )
+          ),
+          'public' => true,
+          'has_archive' => true,
+          'rewrite' => array('slug' => 'movies'),
+          'show_in_rest' => true,
+
+      )
+  );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
+
+//---------------------------------#### -----------------------------//
 ?>

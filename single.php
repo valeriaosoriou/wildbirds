@@ -15,7 +15,9 @@
         <h2 class="my-3"><?php the_title(); ?></h2>
         <p class="lead"><?php the_time('F j Y'); ?></p>
         <?php the_content(); ?>
-        <small>Author: <?php the_author(); ?> / Category: <?php the_category(', '); ?> / Tags: <?php the_tags(', '); ?></small>      
+        <small>Author: <?php the_author(); ?> / Category: <?php the_category(', '); ?> / Tags: <?php the_tags(', '); ?></small>     
+
+        <?php the_terms( $post->ID, 'topics', 'Topics: ', ', ', ' ' ); ?>
 <!------------------------------ COMMENTS  ------------------------------>      
         <!-- If comments exist -->
         <?php 

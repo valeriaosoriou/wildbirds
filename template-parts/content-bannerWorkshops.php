@@ -1,25 +1,3 @@
-<?php get_header(); ?>
-<style>
-  .testing{
-    
-    background:url(<?php echo get_theme_mod('homepage_banner_image', get_bloginfo('template_url').'/images/glennstory.jpg'); ?>) no-repeat center;
-    
-    width: 100%;
-    height: 30rem;
-    /* z-index: 1000; */ 
-  }
-  .abc{
-    padding-top: 0.5rem;
-  }
-  .background-images-styles{
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-
-  }
-</style>
-
 <!-- CONTENT -->
 <!-- SECTION 1: TOP BANNER -->
 <section class="container-fluid bg-custom section-top">
@@ -27,8 +5,10 @@
       <div class="row">
       <?php if ( have_posts() ): while (have_posts()): the_post(); ?>
         <div class="col-12 col-md-6">
-          <h1 class="display-1 text-left font-weight-bold display-1-custom">
-            Changing <br> lives <br> through <br> art
+          <h1 class="text-left text-uppercase display-1-custom">
+          12 Tutors. More than 25 workshops a week. 
+          Macrame, painting, pottery, mosaic, drawing. All levels.
+          Come and share your talent.
           </h1>
         </div>
         <div class="col-12 col-md-6 img">
@@ -54,6 +34,3 @@
     </div>
 
   </section>
-
-
-<?php get_footer(); ?>

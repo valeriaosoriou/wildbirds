@@ -37,7 +37,7 @@
               $args,
                 array(
                   'reply_text' => 'Reply',
-                  'add_below' => $add_below,
+                  'add_below' => 'post',
                   'depth'     => $depth,
                   'max_depth' => 2
                 )

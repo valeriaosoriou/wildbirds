@@ -21,8 +21,20 @@
   </div><!-- end row -->
 </div><!-- end container -->
 
-<section class="container">
-hola add another section here to opening hours
+<section class="container mt-5">
+  <h2 class="text-uppercase text-center">Opening hours</h2>
+  <p class="text-center mt-5">
+  Monday: 8am-5pm <br><br>
+  Tuesday: 9am-5pm <br><br>
+  Wednesday: 8am-5pm <br><br>
+  Thursday: 10am-5pm <br><br>
+  Friday: 8am-5pm <br><br>
+  Saturday: 8am-5pm <br><br>
+  </p>
+
+  <h2 class="text-uppercase text-center">Address</h2>
+  <p class="text-center">7 Claremont Grove, Mt Victoria. <br> Wellington, 6011. <br> New Zealand</p>
+  
 </section>
 
 
